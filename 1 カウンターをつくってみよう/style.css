@@ -1,0 +1,22 @@
+#btn {
+  border: 0; /* ボタンの周りの黒い縁を削除 */
+  outline: 0; /* ボタンを押したときにあらわれる縁を削除 */
+  /* 1remはhtmlタグの文字サイズ デフォルトは16px */
+  padding: 0.5rem 0.25rem; /* ボタンの文字の周りに余白 */
+  color: #fff; /* 文字の色を変更　デフォルトは黒 */
+  background-color: #f759ab; /* 背景色 */
+  border-radius: 0.25rem; /* 要素の縁を丸める */
+  /* ここから先は応用 */
+  transition: 200ms; /* アニメーションをゆっくりさせる */
+}
+
+/* 応用 */
+/* マウスが乗っているときに反映 */
+#btn:hover {
+  background-color: #ff85c0;
+}
+
+/* マウスが押されているときに反映 */
+#btn:active {
+  background-color: #9e1068;
+}
