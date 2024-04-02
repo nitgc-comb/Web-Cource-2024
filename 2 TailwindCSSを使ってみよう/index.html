@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!--
+        < margin >
+        m{向き}-{値}で周りに空白を開けられる
+        向き : x,y,t(上),b(下),l(左),r(右)
+        mx-autoにするとその要素を左右中央に寄せるられる
+    -->
+    <div class="container max-w-screen-md mx-auto my-12">
+        <!-- 
+            < flex >
+            flexを使うと中の要素が一直線に並べられる
+            flex-col で縦方向
+            flex-row で横方向に並べられる <=デフォルト
+
+            items-centerでrowの時は左右中央、colの時は上下中央に寄せられる
+            justify-centerでitems-centerの逆
+         -->
+        <div class="flex items-center flex-col">
+            <!--
+                w-{値}で横幅
+                h-{値}で高さ
+                値 : 0.5 ~ 4(0.5刻み),4 ~ 12(1刻み),14,16 ~ 64(4刻み),72,80,96
+                    2px                                                     384px
+                1/2,1/3,2/3などで画面の割合
+                fullで要素いっぱい
+                screenで画面いっぱい
+            -->
+            <!--                      ここの↓[github]という文字を自分のIDに変える-->
+            <img src="https://github.com/github.png" class="w-24 h-24 rounded-full" />
+            <!--
+                < text >
+                text-{サイズ}で文字の大きさを変えられる
+                サイズ : sm,md,lg,xl ~ 9xl
+
+                font-{太さ}で文字の太さを変えられる
+                太さ : thin,extralight,light,normal,medium,semibold,bold,extrabold,black
+                < --細い                                                             太い-- >
+            -->
+            <h1 class="text-4xl font-black">
+                masa506
+            </h1>
+        </div>
+        <!--
+            <background> <text>
+            bg-{色}-{値}で背景の色を変えられる
+            text-{色}-{値}で文字の色を変えられる
+            色 : slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose
+                            灰色               赤色              黄色       緑色                        青色                  紫                    赤
+            値 : 50,100 ~ 900(100ごとに),950
+            明るさ 白                     黒
+            ※黒と白はそれぞれ、 bg-white text-black のように値はいらない
+
+            < border radius >
+            rounded-{丸み}で要素の角を丸くすることができる
+            丸み : none,sm,md,lg,xl ~ 3xl,full
+                ｶｸｶｸ                        まる
+            rounded-{場所}-{丸み}で要素の指定した場所を丸くできる。
+            場所 : t(上側),b(下側),l(左側),r(右側),tl(左上)...組み合わせて右上,左下なども設定できる
+
+            <padding>
+            p{向き}-{値}で背景を含んで周りに空間を開けることができる
+            向き,値 : marginと一緒
+        -->
+        <div class="my-12 bg-orange-200 p-4 rounded-md">
+            <ul>
+                <li>
+                    岐阜高専2年
+                </li>
+                <li class="text-purple-600">
+                    好きなことはプログラミング
+                </li>
+            </ul>
+        </div>
+        <!-- 応用 -->
+        <!--
+            スマホ対応させてみよう
+            < responsive >
+            sm : 640px
+            md : 768px
+            lg : 1024px
+            xl : 1280px
+            2xl: 1536px
+            lg:text-5xl <- 画面の横幅が768px以上の場合text-5xlを適応
+            スマホの横幅は目安 350 ~ 500 ぐらい
+
+            アニメーションを付けてみよう
+            hover : マウスが要素の上に載っているとき
+            active: マウスで要素が押されたときだけ
+            focus : マウスで要素が押されてほかの要素が押されるまで
+
+            < transition >
+            duration-{値}で変化が滑らかになる。(背景色や横幅など)
+        -->
+        <h2 class="text-xl md:text-3xl font-bold">今年の抱負</h2>
+        <span>頑張る</span>
+        <button class="px-2 py-1 bg-sky-500 text-white rounded-md hover:bg-sky-400 active:bg-sky-700 duration-200">
+            頑張るボタン
+        </button>
+        <button
+            class="px-4 py-2 bg-violet-500 text-white hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
+            早起きボタン
+        </button>
+
+        <!--
+            < block >
+            かたまり　あってもなくてもいい。blockのある要素同士を続けると改行される
+
+            < shadow >
+            shadow-{大きさ}で要素の後ろに影を付けることができます。
+            大きさ: sm,md,lg,xl,2xl
+
+            < scale >
+            scale-{値}で見た目の大きさを変えられます。
+            値(%) : 0,50,75,90,95,100,105,110,125,150
+                     0.5%       いっしょ          1.5倍
+        -->
+
+        <div
+            class="block mx-auto my-4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 hover:scale-105 duration-200">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                夢はエンジニア</h5>
+            <p class="font-normal text-gray-700">高専は自分の学びたいことに集中できる学校です！</p>
+        </div>
+        <div
+            class="block mx-auto my-4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 hover:scale-105 duration-200">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Hello World</h5>
+            <p class="font-normal text-gray-700">Hello Worldはすべての言語の基本です</p>
+        </div>
+    </div>
+</body>
+
+</html>
